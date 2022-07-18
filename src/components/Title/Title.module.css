@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "PT-sans";
+    src: url(../../fonts/PT_Sans/PTSans-Regular.ttf);
+}
+
+.container{
+    height: 481px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-width: 138px;
+    width: 30%;
+    background-color: #5A61ED;
+    margin-right: 21px;
+}
+
+.titleText{ 
+    font-family: "PT-sans";   
+    color: white;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-bottom: 23px;
+    margin-right: 7px;
+    font-size: 49px;
+    line-height: 63px;
+    letter-spacing: 0.5px;
+}
