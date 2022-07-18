@@ -4,6 +4,22 @@ import { useForm } from "react-hook-form";
 const Form = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
+    const years = [];
+    for(let i = 1990; i < 2021; i++) years.push(i);
+    const days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+    const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const dayData = days.map(item => {
+        return <option key={item} value="">{item}</option>
+    });
+
+    const monthData = month.map(item => {
+        return <option key={item} value="">{item}</option>
+    });
+
+    const yearData = years.map(item => {
+        return <option key={item} value="">{item}</option>
+    });
 
     return (<div className={HS.container}>
         <div className={HS.formTitle}>New user?</div>
@@ -33,18 +49,24 @@ const Form = () => {
                 <div className={HS.dateContainer}>
                     <label className={HS.date} htmlFor="date">Date of Birth</label>
                     <select id='dateDay' {...register("date", { required: true })} >
-
+                        {dayData}
                     </select>
-                    <select id='dateMonth' {...register("date", { required: true })} ></select>
-                    <select id='dateYear' {...register("date", { required: true })} ></select>
+                    <select id='dateMonth' {...register("date", { required: true })} >
+                        {monthData}
+                    </select>
+                    <select id='dateYear' {...register("date", { required: true })} >
+                        {yearData}
+                    </select>
                 </div>
             </div>
-            <div className={HS.formItem}>
-                <div>Gender</div>
-                <label htmlFor="male">
-                    <input className={HS.gender} id='male' type={'radio'} />Male</label>
-                <label htmlFor="female">
-                    <input className={HS.gender} id='female' type={'radio'} />Female</label>
+            
+            <div className={HS.formItem} id={HS.gender}>   
+                    <div className={HS.genderTitle}>Gender</div>  
+                    <input className={HS.gender} name='gender' id='male' type={'radio'} />
+                    <label htmlFor="male">Male</label>
+                
+                    <input className={HS.gender} name='gender' id='female' type={'radio'} />
+                    <label htmlFor="female">Female</label>
 
             </div>
             <div className={HS.formItem}>

@@ -38,7 +38,7 @@ label {
     margin-bottom: 20px;
 }
 
-.formContainer{
+.formContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -49,8 +49,8 @@ label {
     width: 235px;
     margin-bottom: 16px;
     font-size: 12px;
-line-height: 14px;
-color: #7C7C7C;
+    line-height: 14px;
+    color: #7C7C7C;
 }
 
 .formItem input {
@@ -61,44 +61,94 @@ color: #7C7C7C;
     padding-top: 6px;
     padding-bottom: 6px;
     font-size: 14px;
-line-height: 16px;
-color: #111111;
+    line-height: 16px;
+    color: #111111;
 }
 
-.date{
+.date {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
 
-.date select{
+.date select {
     width: 20%;
 }
 
-.lastInput{
+.lastInput {
     margin-bottom: 0;
 }
 
-.formSubmit{
+.formSubmit {
     font-family: 'PT-sans';
     width: 154px;
     height: 32px;
     background-color: #5A61ED;
     border: none;
     color: white;
-font-size: 14px;
-line-height: 18px;
+    font-size: 14px;
+    line-height: 18px;
 }
 
-.gender{
-    width: 0;
+#male, #female {
+    width: 20px;
 }
 
-.formText{
+.formText {
     font-size: 13px;
-line-height: 15px;
+    line-height: 15px;
 }
 
-.formSubmit, .formText{
+.formSubmit,
+.formText {
     margin-top: 98px;
 }
+
+.dateContainer {
+    border-bottom: #7C7C7C 1px solid;
+}
+
+option {
+    text-align: end;
+}
+
+select {
+    margin-top: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    position: relative;
+    outline: none;
+    padding-right: 40px;
+    background-image: url(../../img/down-arrow.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+}
+
+select:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.genderTitle{
+    width: 100%;
+}
+
+#gender{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#gender input{
+width: 20px;
+}
+
+#gender label{
+    margin-right: 19px;
+    }
