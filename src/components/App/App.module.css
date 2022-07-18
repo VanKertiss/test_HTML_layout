@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "PT-sans";
+    src: url(../../fonts/PT_Sans/PTSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'work-sans';
+    src: url(../../fonts/Work_Sans/static/WorkSans-Regular.ttf);
+}
+
+.container{   
+    display: flex;    
+    font-family: 'work-sans';
+    max-width: 665px;
+    width: 50%;
+    margin: 50px auto;
+}

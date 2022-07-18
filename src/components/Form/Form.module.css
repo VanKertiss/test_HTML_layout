@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'work-sans-light';
+    src: url(../../fonts/Work_Sans/static/WorkSans-Light.ttf);
+}
+
+@font-face {
+    font-family: "PT-sans";
+    src: url(../../fonts/PT_Sans/PTSans-Regular.ttf);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 528px;
+    padding-right: 22px;
+}
+
+.formTitle {
+    font-weight: bold;
+    margin-top: 39px;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.46px;
+    color: #111111;
+    margin-bottom: 0;
+}
+
+.formDescription {
+    font-family: 'work-sans-light';
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.formItem {
+    width: 45%;
+    width: 235px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #7C7C7C;
+}
+
+.formItem input {
+    width: 235px;
+    border: none;
+    border-bottom: #F2F2F2 1px solid;
+    outline: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #111111;
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.date select {
+    width: 20%;
+}
+
+.lastInput {
+    margin-bottom: 0;
+}
+
+.formSubmit {
+    font-family: 'PT-sans';
+    width: 154px;
+    height: 32px;
+    background-color: #5A61ED;
+    border: none;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#male, #female {
+    width: 20px;
+}
+
+.formText {
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.formSubmit,
+.formText {
+    margin-top: 98px;
+}
+
+.dateContainer {
+    border-bottom: #7C7C7C 1px solid;
+}
+
+option {
+    text-align: end;
+}
+
+select {
+    margin-top: 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    position: relative;
+    outline: none;
+    padding-right: 40px;
+    background-image: url(../../img/down-arrow.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-bottom: 6px;
+}
+
+select:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.genderTitle{
+    width: 100%;
+}
+
+#gender{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#gender input{
+width: 20px;
+}
+
+#gender label{
+    margin-right: 19px;
+    }
