@@ -1,12 +1,24 @@
 import HS from './Form.module.css';
 import { useForm } from "react-hook-form";
+import { useState } from 'react';
+import { shake } from 'react-animations';
+import styled, { keyframes } from 'styled-components';
 
 const Form = () => {
+    const [anim, setAnim] = useState(false)
+
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        setAnim(true)
+    };
+
+    const Bounce = styled.div`animation: 2s ${keyframes`${shake}`}`;
+
     const years = [];
     for(let i = 1990; i < 2021; i++) years.push(i);
+
     const days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+
     const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     const dayData = days.map(item => {
@@ -21,7 +33,8 @@ const Form = () => {
         return <option key={item} value="">{item}</option>
     });
 
-    return (<div className={HS.container}>
+    return (
+        <div className={HS.container}>
         <div className={HS.formTitle}>New user?</div>
         <div className={HS.formDescription}>Use the form below to create your account.</div>
         <form onSubmit={handleSubmit(onSubmit)} className={HS.formContainer}>
@@ -32,29 +45,29 @@ const Form = () => {
             </div>
             <div className={HS.formItem}>
                 <label htmlFor="lastName">Last Name
-                    <input defaultValue="Miller" id='lastName' {...register("lastName", { required: true })} />
+                    <input defaultValue="Miller" id='lastName'  />
                 </label>
             </div>
             <div className={HS.formItem}>
                 <label htmlFor="nation">Nationality
-                    <input id='nation' defaultValue="American" {...register("nation", { required: true })} />
+                    <input id='nation' defaultValue="American"  />
                 </label>
             </div>
             <div className={HS.formItem}>
                 <label htmlFor="email">E-mail
-                    <input id='email' defaultValue="alice.miller@yahoo.com" type={'email'} {...register("email", { required: true })} />
+                    <input id='email' defaultValue="alice.miller@yahoo.com" type={'email'} {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
                 </label>
             </div>
             <div className={HS.formItem}>
                 <div className={HS.dateContainer}>
                     <label className={HS.date} htmlFor="date">Date of Birth</label>
-                    <select id='dateDay' {...register("date", { required: true })} >
+                    <select id='dateDay' >
                         {dayData}
                     </select>
-                    <select id='dateMonth' {...register("date", { required: true })} >
+                    <select id='dateMonth' >
                         {monthData}
                     </select>
-                    <select id='dateYear' {...register("date", { required: true })} >
+                    <select id='dateYear' >
                         {yearData}
                     </select>
                 </div>
@@ -71,17 +84,18 @@ const Form = () => {
             </div>
             <div className={HS.formItem}>
                 <label className={HS.lastInput} htmlFor="password">Password
-                    <input id='password' defaultValue="" type={'password'} {...register("pass", { required: true })} />
+                    <input id='password' defaultValue="" type={'password'} {...register("password", { required: true, minLength:8, pattern: /^[A-Za-z]+$/i })}  />
                 </label>
             </div>
             <div className={HS.formItem}>
                 <label className={HS.lastInput} htmlFor="passConfirm">Confirm Password
-                    <input id='passConfirm' type={'password'} defaultValue='' {...register("pass", { required: true })}></input>
+                    <input id='passConfirm' type={'password'} defaultValue='' {...register("passwordConfirm", { required: true, minLength:8, pattern: /^[A-Za-z]+$/i })} ></input>
                 </label>
             </div>
 
             <div className={HS.formText}>Have an account? <a href="#">Login</a></div>
-            <input className={HS.formSubmit} type="submit" value="Complete Signup" />
+            {anim ? <Bounce > <input className={HS.formSubmit} type="submit" value="Complete Signup" /></Bounce> 
+            : <input className={HS.formSubmit} type="submit" value="Complete Signup" />}
         </form>
     </div>
 
