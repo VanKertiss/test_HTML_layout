@@ -14,9 +14,14 @@
 }
 
 .container{   
+    position: relative;
     display: flex;    
     font-family: 'work-sans';
     max-width: 665px;
     width: 50%;
     margin: 50px auto;
+}
+
+.background{
+    position: absolute;
 }
